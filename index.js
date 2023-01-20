@@ -6,6 +6,8 @@ const bcrypt = require('bcrypt');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
+
 app.get('/', async (req, res, next) => {
   try {
     res.send('<h1>Welcome to Loginopolis!</h1><p>Log in via POST /login or register via POST /register</p>');
@@ -28,6 +30,7 @@ app.post('/register', async (req, res, next) => {
     next(e)
   }
 })
+
 
 app.post('/login', async (req, res, next) => {
   try {
